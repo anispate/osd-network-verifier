@@ -188,7 +188,7 @@ func (c Client) CreateInternetGateway(Vpc ec2.CreateVpcOutput) ec2.CreateInterne
 	return *IGresult
 }
 
-func (c Client) CreateSubnet(CidrBlock string, Vpc ec2.CreateVpcOutput) ec2.CreateSubnetOutput {
+func (c Client) CreateSubnet(CidrBlock string, vpcID string) ec2.CreateSubnetOutput {
 	
 	Subnet, err := c.ec2Client.CreateSubnet(Subnetinput := &ec2.CreateSubnetInput{
 		CidrBlock: aws.String(CidrBlock),
